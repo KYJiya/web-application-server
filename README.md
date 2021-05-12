@@ -15,7 +15,9 @@
 * 각 요구사항을 구현하는 것이 중요한 것이 아니라 구현 과정을 통해 학습한 내용을 인식하는 것이 배움에 중요하다. 
 
 ### 요구사항 1 - http://localhost:8080/index.html로 접속시 응답
-* 
+* 웹접속시 텍스트만 보인다. 
+* string return 형식으로 구현함.
+* test string은 "localhost:8080 /index.html"을 사용.
 
 ### 요구사항 2 - get 방식으로 회원가입
 * 
