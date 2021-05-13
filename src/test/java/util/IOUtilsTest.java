@@ -1,9 +1,7 @@
 package util;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -25,12 +23,20 @@ public class IOUtilsTest {
 
     @Test
     public void splitString() throws Exception {
-        String data = "localhost:8080 /index.html";
+        String data = "GET /index.html";
         StringReader sr = new StringReader(data);
         BufferedReader br = new BufferedReader(sr);
         String line = br.readLine();
 
         logger.debug("parse body : {}", IOUtils.splitString(line));
-        assertArrayEquals(new String[] {"localhost:8080", "/index.html"}, IOUtils.splitString(line));
+        assertArrayEquals(new String[] {"GET", "/index.html"}, IOUtils.splitString(line));
+    }
+
+    @Test
+    public void lineData를_검사한다() throws Exception {
+        String filePath = "D:\\yongjun\\programming project\\java\\Onion\\web-application-server\\src\\test\\java\\util\\test.txt";
+        InputStream in = new FileInputStream(filePath);
+
+        assertArrayEquals(new String[] {"test", "string"}, IOUtils.lineData(in));
     }
 }
