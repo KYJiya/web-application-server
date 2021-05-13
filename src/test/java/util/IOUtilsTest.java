@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class IOUtilsTest {
     private static final Logger logger = LoggerFactory.getLogger(IOUtilsTest.class);
@@ -22,21 +23,18 @@ public class IOUtilsTest {
     }
 
     @Test
-    public void splitString() throws Exception {
-        String data = "GET /index.html";
-        StringReader sr = new StringReader(data);
-        BufferedReader br = new BufferedReader(sr);
-        String line = br.readLine();
+    public void splitString을_검사한다() {
+        String line = "GET /index.html";
 
         logger.debug("parse body : {}", IOUtils.splitString(line));
         assertArrayEquals(new String[] {"GET", "/index.html"}, IOUtils.splitString(line));
     }
 
     @Test
-    public void lineData를_검사한다() throws Exception {
+    public void firstlineData를_검사한다() throws Exception {
         String filePath = "D:\\yongjun\\programming project\\java\\Onion\\web-application-server\\src\\test\\java\\util\\test.txt";
         InputStream in = new FileInputStream(filePath);
 
-        assertArrayEquals(new String[] {"test", "string"}, IOUtils.lineData(in));
+        assertEquals("test string", IOUtils.firstlineData(in));
     }
 }

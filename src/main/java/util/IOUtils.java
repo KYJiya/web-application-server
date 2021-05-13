@@ -22,23 +22,20 @@ public class IOUtils {
         return Files.readAllBytes(new File("./webapp" + tokens[1]).toPath());
     }
 
-    public static String[] lineData(InputStream in) throws IOException {
+    public static String firstlineData(InputStream in) throws IOException {
         InputStreamReader reader = new InputStreamReader(in);
         BufferedReader br = new BufferedReader(reader);
         String line = br.readLine();
-        String[] tokens = line.split(" ");
-        return tokens;
+        return line;
     }
 
-    public static void linePrint(InputStream in) throws IOException {
+    public static void alllinePrint(InputStream in) throws IOException {
         InputStreamReader reader = new InputStreamReader(in);
         BufferedReader br = new BufferedReader(reader);
         String line = null;
-        String[] tokens = null;
 
         while(!"".equals(line)) {
             line = br.readLine();
-            tokens = line.split(" ");
             System.out.println("*40*" + line);
             if(line == null) { return; }
         }
