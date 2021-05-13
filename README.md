@@ -17,7 +17,9 @@
 ### 요구사항 1 - http://localhost:8080/index.html로 접속시 응답
 * 웹접속시 텍스트만 보인다. 
 * string return 형식으로 구현함.
-* test string은 "localhost:8080 /index.html"을 사용.
+* alllinePrint와 firstlineData는 같이 구동하면 에러 발생.
+* public void splitString을_검사한다()
+* public void firstlineData를_검사한다()
 
 ### 요구사항 2 - get 방식으로 회원가입
 * 
