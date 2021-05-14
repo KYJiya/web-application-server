@@ -25,7 +25,8 @@
 * splitString을 사용하여 첫 라인에서 주소만 얻어냄.
 * public void urlParse를_검사한다()
 * public void userInto를_검사한다()
-* java.lang.AssertionError: 
+* java.lang.AssertionError:
+  
   expected: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]> but was: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
   Expected :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
   Actual   :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
