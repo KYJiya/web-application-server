@@ -30,6 +30,7 @@
   expected: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]> but was: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
   Expected :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
   Actual   :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
+  
   이런 에러 발생.
 
 ### 요구사항 3 - post 방식으로 회원가입
