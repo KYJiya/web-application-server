@@ -2,7 +2,9 @@ package util;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
+import model.User;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,5 +38,21 @@ public class IOUtilsTest {
         InputStream in = new FileInputStream(filePath);
 
         assertEquals("test string", IOUtils.firstlineData(in));
+    }
+
+    @Test
+    public void urlParse를_검사한다() throws Exception {
+        String Get = "GET /user/create?userId=sight&password=fd1&name=yongjun&email=yjkwon%40futuremain.com HTTP/1.1";
+
+        logger.debug("parse body : {}", Arrays.toString(IOUtils.urlParse(Get)));
+        assertArrayEquals(new String[] {"fd1", "yongjun", "sight", "yjkwon%40futuremain.com HTTP/1.1"}, IOUtils.urlParse(Get));
+    }
+
+    @Test
+    public void userInto를_검사한다() throws Exception {
+        String[] getUser = {"fd1", "yongjun", "sight", "yjkwon%40futuremain.com HTTP/1.1"};
+
+        logger.debug("parse body : {}", IOUtils.userInto(getUser));
+        assertEquals(new User("sight", "fd1", "yongjun", "yjkwon%40futuremain.com"), IOUtils.userInto(getUser));
     }
 }

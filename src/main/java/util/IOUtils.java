@@ -1,5 +1,7 @@
 package util;
 
+import model.User;
+
 import java.io.*;
 import java.nio.file.Files;
 
@@ -26,6 +28,7 @@ public class IOUtils {
         InputStreamReader reader = new InputStreamReader(in);
         BufferedReader br = new BufferedReader(reader);
         String line = br.readLine();
+        System.out.println("*39*" + line);
         return line;
     }
 
@@ -44,5 +47,15 @@ public class IOUtils {
     public static String[] splitString(String line) {
         String[] tokens = line.split(" ");
         return tokens;
+    }
+
+    public static String[] urlParse(String line) {
+        String[] temp = HttpRequestUtils.parseQueryString(line).values().toArray(new String[0]);
+        return temp;
+    }
+
+    public static User userInto(String[] getUser) {
+        User userObject = new User(getUser[2], getUser[0], getUser[1], splitString(getUser[3])[0]);
+        return userObject;
     }
 }

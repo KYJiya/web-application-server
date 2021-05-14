@@ -25,6 +25,7 @@ public class RequestHandler extends Thread {
             // TODO 사용자 요청에 대한 처리는 이 곳에 구현하면 된다.
             String line = IOUtils.firstlineData(in);
             String[] tokens = IOUtils.splitString(line);
+            IOUtils.urlParse(line);
             // Yongjun
             DataOutputStream dos = new DataOutputStream(out);
             byte[] body = IOUtils.fileData(tokens);
