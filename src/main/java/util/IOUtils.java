@@ -4,6 +4,7 @@ import model.User;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.util.Arrays;
 
 public class IOUtils {
     /**
@@ -51,11 +52,13 @@ public class IOUtils {
 
     public static String[] urlParse(String line) {
         String[] temp = HttpRequestUtils.parseQueryString(line).values().toArray(new String[0]);
+
+        System.out.println("*38*" + Arrays.toString(temp));
         return temp;
     }
 
     public static User userInto(String[] getUser) {
-        User userObject = new User(getUser[2], getUser[0], getUser[1], splitString(getUser[3])[0]);
+        User userObject = new User(getUser[2], getUser[0], getUser[1], getUser[3]);
         return userObject;
     }
 }
