@@ -22,7 +22,13 @@
 * public void firstlineData를_검사한다()
 
 ### 요구사항 2 - get 방식으로 회원가입
-* 
+* splitString을 사용하여 첫 라인에서 주소만 얻어냄.
+* public void urlParse를_검사한다()
+* public void userInto를_검사한다()
+* java.lang.AssertionError: expected: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]> but was: model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
+  Expected :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
+  Actual   :model.User<User [userId=sight, password=fd1, name=yongjun, email=yjkwon%40futuremain.com]>
+  이런 에러 발생.
 
 ### 요구사항 3 - post 방식으로 회원가입
 * 
